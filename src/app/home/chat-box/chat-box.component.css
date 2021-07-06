@@ -1,0 +1,7 @@
+.card {
+    cursor: pointer;
+    position: fixed;
+    bottom: 55px;
+    right: 5px;
+    width: 280px;
+  }

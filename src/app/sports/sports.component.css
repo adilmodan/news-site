@@ -1,0 +1,44 @@
+#container {
+    position: relative;
+    width: 504px;
+    margin: 0 auto;
+    
+    
+}
+ 
+#slide-container {
+    width: auto;
+}
+ 
+.article {
+    display: inline-block;
+}
+ 
+.article img {
+    width: 165px;
+    height: auto;    
+}
+ 
+#overlay-left {
+    position: absolute;
+    width: 165px;
+    height: 60px;
+    top: 0;
+    left: 0;
+    background: url('http://www.deadmau5.com/wp-content/themes/deadmau5/images/slider-fade-left.png') no-repeat top left;
+    z-index: 2;
+}
+ 
+#overlay-right {
+    position: absolute;
+    width: 165px;
+    height: 60px;
+    top: 0;
+    right: 0;
+    background: url('http://www.deadmau5.com/wp-content/themes/deadmau5/images/slider-fade-right.png') no-repeat top right;
+    z-index: 2;
+}
+ 
+#overlay-left:hover, #overlay-right:hover {
+    opacity: 0.8;
+}

@@ -1,0 +1,26 @@
+<app-header></app-header>
+<div class="d-flex justify-content-center m-3 mb-3">
+    <form [formGroup]="controlForm" (ngSubmit)="onSubmit()"><!-- method="post" (click)="" id="form1"-->
+        <h2 class="form-signin-heading">Contact Us</h2>
+        <div style="max-width: 400px; display: flex;">
+           
+            <div>
+            <label for="email">
+                Email</label>
+            <input name="email" type="text" id="email" class="form-control" formControlName="email" />
+            </div>
+            <div>
+            <label for="query">
+                Query</label>
+            <input name="query" id="query" class="form-control" formControlName="query"/></div>
+                <br />
+        </div>
+        <br>
+        <button class="btn btn-outline-success my-2 my-sm-0" 
+                type="submit" 
+                onClick="alert('Thank you for Contacting Us!')"
+                >Submit</button>
+    </form>
+</div>
+
+<app-footer></app-footer>

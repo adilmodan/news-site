@@ -1,0 +1,35 @@
+<app-admin-header></app-admin-header>
+<form>
+<h2 style="text-align: center; ">News List</h2><br><br><br>
+
+<div class="search-container" style="text-align: right; ">
+ 
+  <label for="search" style="text-align: right; ">Search:</label>
+   <input type="text" placeholder="Search.." name="search" [(ngModel)]="searchBox">
+    <button (click)="search()">search</button>
+</div>
+ 
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Published At</th>
+        <th scope="col">Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let news of allNews'>
+        <th>{{news.title}}</th>
+        <th>{{news.description}}</th>
+        <th>{{news.publishedAt}}</th>
+        <th>
+          <button class="btn btn-danger" (click)="delete(news._id)">delete</button>
+          <button class="btn btn-success" (click)="edit(news)">edit</button>
+        </th>
+      </tr>
+    </tbody>
+    
+  </table>
+</form>
+<!-- <app-footer></app-footer> -->

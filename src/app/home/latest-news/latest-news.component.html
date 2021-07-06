@@ -1,0 +1,21 @@
+<!--lasted news -->
+<div style="margin-top: 20px;">
+    <div class="d-flex justify-content-center">
+        <div *ngFor = "let news of latestNewsList; let i = index;">
+        
+            <div class="p-2">
+                <div class="card" style="width: 25rem; height: 20rem;">
+                    <img class="crd-img-top" 
+                         src="{{news.urlToImage}}"
+                         alt="Card image cap">
+                    <div class="card-body">
+                    <h5 class="card-title">{{news.title}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Published By | {{news.publishedAt}} </h6>
+                    <p class="card-text">{{news.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     

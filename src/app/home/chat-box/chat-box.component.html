@@ -1,0 +1,40 @@
+
+<div class="fixed-bottom position-relative">
+    <div id="accordion">
+        <div class="card" style="width: max-content;">
+            <div class="card-header bg-warning">
+                <div class="collapsed" data-toggle="collapse" href="#collapseTwo">
+                    <h3 class="card-title text-center " type="button" class="btn btn-primary btn-md">Group Chat</h3>
+                </div>
+            </div>
+            <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                <div class="card-body">
+                    <!-- <div class="form-group">
+                        <div class="row">
+                            <div class="col-8">
+                                <input class='form-control' placeholder="Create a nickname" id="nick" type="text" />
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-primary" id="nick">Set Nickname</button>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="form-group">
+                        <textarea style="height: 300px; width: 500px;" id="messageBox" [ngModel]="msg"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-8">
+                                <input class='form-control' placeholder="Say something ..." id="message" type="text" [(ngModel)]="message"/>
+                            </div>
+                            <div class="col-4">
+                                <button class="btn btn-success" id="chat" (click)="sendMessage()">Send Message</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+    </div>
+</div>

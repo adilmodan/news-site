@@ -1,0 +1,23 @@
+<body>
+    <div class="flexWrap">
+        <div style="padding: 5px 20px 0px;">
+            <h4>Welcome, Today's weather is </h4>
+        </div>
+        <div *ngIf="weatherForecastData?.list[0].weather[0].description !='heavy intensity rain'">
+            <img style="width:50px; height: 100%;"
+                src="./assets/images/{{ weatherForecastData?.list[0].weather[0].main }}.png" alt="" />
+        </div>
+        <div *ngIf="weatherForecastData?.list[0].weather[0].description =='heavy intensity rain'">
+            <img style="width:1px" class="thumbnail" src="./assets/images/ThunderIcon.png" alt="" />
+        </div>
+        <div style="padding: 5px;">
+            <h4>{{ weatherForecastData?.list[0].weather[0].description}}</h4>
+        </div>
+        <div style="padding: 5px;">
+            <h4>{{ weatherForecastData?.list[0].main.temp | number: '1.0-0'}} &#8451; </h4>
+        </div>
+        <div style="padding: 5px;">
+            <h4>in {{ weatherForecastData?.city.name }}</h4>
+        </div>
+    </div>
+</body>

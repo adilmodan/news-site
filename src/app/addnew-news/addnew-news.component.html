@@ -1,0 +1,56 @@
+<app-admin-header></app-admin-header>
+
+<body>
+    <div class="d-flex justify-content-center m-3 mb-3">
+
+        <div class="card" style="width: 40rem;">
+            <div class="card-body">
+                <div style="max-width: 400px;">
+                    <form [formGroup]="addNewsForm" (ngSubmit)="onSubmit()">
+                        <div style="max-width: 400px; display:block;">
+                            <h2>Add News</h2>
+                            <label for="title" for="input_box">
+                                Title</label>
+                            <input name="txtUsername" class="center-block" type="text" id="title" class="form-control"
+                                placeholder="Enter Title" formControlName="title" required />
+                            <br />
+
+                            <label for="description">
+                                Description</label>
+                            <input name="description" id="description" class="form-control"
+                                placeholder="Enter Description" formControlName="description" required />
+                            <br />
+
+                            <label for="url">
+                                URL</label>
+                            <input name="url" id="url" class="form-control" placeholder="Url" formControlName="url"
+                                required />
+                            <br />
+
+                            <label for="urlToImage">
+                                Url To Image</label>
+                            <input name="urlToImage" id="urlToImage" class="form-control" formControlName="urlToImage"
+                                required />
+                            <br />
+
+                            <label for="publishedAt">
+                                Published At</label>
+                            <input name="publishedAt" id="publishedAt" class="form-control" placeholder="publishedAt"
+                                formControlName="publishedAt" required />
+                            <br />
+                            <hr />
+                            <input type="submit" name="btnLogIn" value="Add" id="btnLogIn"
+                                class="btn btn-warning float-right ml-2" />
+                            <!-- <button routerLinkActive class="btn btn-warning float-right ml-2" type="submit" routerLink="/add">Add</button> -->
+                            <input class="btn btn-primary float-right" type="submit" value="Rest">
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<footer>
+    <!-- <app-footer></app-footer> -->
+</footer>

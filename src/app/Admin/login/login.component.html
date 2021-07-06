@@ -1,0 +1,155 @@
+<app-login-header></app-login-header>
+<div class="col-md-12; c-1">
+    <div class="card card-container">
+      <form
+        *ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="username.errors && f.submitted"
+          >
+            Username is required!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="password.errors && f.submitted"
+          >
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Password must be at least 6 characters
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-primary btn-block">
+            Login
+          </button>
+        </div>
+        <div class="form-group">
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && isLoginFailed"
+          >
+            Login failed: {{ errorMessage }}
+          </div>
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isLoggedIn">
+        Logged in as {{ roles }}.
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+  
+<!-- <div class="d-flex justify-content-center m-3 mb-3">
+
+  <div class="card" style="width: 40rem;"> 
+      <div class="card-body">
+        <form method="post" action="Default.aspx" id="form1">
+          <div style="max-width: 400px;">
+              <h2 class="form-signin-heading">LOG IN</h2>
+              <label for="txtEmail">
+                  Email</label>
+              <input name="txtEmail" id="txtEmail" class="form-control" placeholder="Enter Email"
+                  required type="email" />
+                  <br> <label for="txtPassword">
+                      Password</label>
+                  <input name="txtPassword" type="password" id="txtPassword" title="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number"
+                      class="form-control" placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
+                  <br />
+              <hr />
+              <button routerLinkActive class="btn btn-warning float-right ml-2" type="submit" routerLink="/logIn">Log In</button>
+              <button routerLinkActive class="btn btn-warning float-right ml-2" type="submit" routerLink="/reset">Reset</button>
+
+            
+          </div>
+          </form>
+      </div>
+  </div>
+</div> -->
+<!-- <app-footer></app-footer> -->
+<!-- 
+
+<div class='row mt-2 justify-content-center'>
+    <div class="col-lg-5">
+        <form [formGroup]='loginForm' (ngSubmit)='userLogin()'>
+            <div class='card'>
+                <div class='card-header bg-dark text-light text-center'>
+                    <div class='card-title'>
+                        <h3>Login</h3>
+                    </div>
+                </div>
+                <div class='card-body text-center ml-5 mr-5'>
+    
+                    <div class="form-group">
+                        <input type='text' class='form-control form-control-lg border-success' placeholder="Email"
+                            formControlName='userEmail' [ngClass]="{ 'is-invalid': submitted && f.userEmail.invalid}">
+                        <div *ngIf="submitted && f.userEmail.errors?.required" class='text-danger text-left'>
+                            Email is required
+                        </div>
+                        <div *ngIf="submitted && f.userEmail.dirty && f.userEmail.errors?.email"
+                            class='text-danger text-left'>
+                            Enter a valid email address, e.g., john@example.com
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type='password' class='form-control form-control-lg border-success' placeholder="Password"
+                            formControlName='userPassword' [ngClass]="{ 'is-invalid': submitted && f.userPassword.invalid}">
+                        <div *ngIf="submitted && f.userPassword.errors?.required" class='text-danger text-left'>
+                            Password is required
+                        </div>
+                    </div>
+    
+                    <div class="form-group">
+                        <input type='checkbox' class='form-check-input' id='rememberMe' formControlName='rememberMe'>
+                        <label class="form-check-label" for='rememberMe'>
+                            Remember me
+                        </label>
+                    </div>
+                    <div class='form-group'>
+                        <span class='font-weight-bold text-danger'>{{loginError}}</span>
+                    </div>
+                </div>
+                <div class='card-footer'>
+                    <div class="row">
+                        <div class="col-6">
+                            <button type='submit' class='btn btn-lg btn-success'>Login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div> -->

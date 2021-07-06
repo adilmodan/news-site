@@ -1,0 +1,9 @@
+/* .result img {
+    width:150%;
+    height: 10px;
+} */
+
+.carousel-inner {
+    height: 50vh;
+    min-height: 400px;
+}
